@@ -5,8 +5,8 @@
     android:focusable="true"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
+    android:paddingTop="1dp"
+    android:paddingBottom="1dp"
     android:clickable="true"
     android:background="?android:attr/selectableItemBackground"
     >
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/title"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@color/title"
         android:layout_alignParentTop="true"
@@ -32,6 +32,7 @@
         android:id="@+id/year"
         android:textColor="@color/year"
         android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         />
 
 </RelativeLayout>

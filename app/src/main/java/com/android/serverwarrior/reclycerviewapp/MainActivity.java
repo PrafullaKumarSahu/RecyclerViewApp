@@ -2,6 +2,7 @@ package com.android.serverwarrior.reclycerviewapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -22,12 +23,13 @@ public class MainActivity extends AppCompatActivity {
 //        setSupportActionBar( toolbar );
 
         recyclerView = ( RecyclerView ) findViewById( R.id.recycler_view );
-        prepareMovieData();
-        Log.v( "Movie Count in onCreate", "" + moviesList.size() );
+
         mAdapter = new MoviesAdapter(moviesList);
+        prepareMovieData();
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager( getApplicationContext() );
         recyclerView.setLayoutManager( mLayoutManager );
-       // recyclerView.setItemAnimator( new DefaultItemAnimator());
+        recyclerView.setItemAnimator( new DefaultItemAnimator());
+        recyclerView.addItemDecoration( new DividerItemDecoration( this, LinearLayoutManager.VERTICAL ) );
         recyclerView.setAdapter( mAdapter );
 
 
@@ -82,6 +84,6 @@ public class MainActivity extends AppCompatActivity {
         movie = new Movie( "Guardians of the Galaxy", "Science Fiction & Fantasy", "2014" );
         moviesList.add( movie );
         Log.v("Main Activity", "movie count " + moviesList.size());
-       // mAdapter.notifyDataSetChanged();
+        mAdapter.notifyDataSetChanged();
     }
 }

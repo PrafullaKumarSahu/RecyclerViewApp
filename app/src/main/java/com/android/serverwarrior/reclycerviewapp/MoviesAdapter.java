@@ -1,7 +1,6 @@
 package com.android.serverwarrior.reclycerviewapp;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     private List<Movie> moviesList;
 
     public MoviesAdapter(List<Movie> myMoviesList){
-        Log.v( "Movie Count in Adapter", "" + moviesList.size() );
         this.moviesList = myMoviesList;
     }
 
